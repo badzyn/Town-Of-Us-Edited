@@ -88,6 +88,7 @@ namespace TownOfUsEdited
         Blackmailer,
         Escapist,
         Bomber,
+        Kamikaze,
         Warlock,
         Venerer,
         Converter,

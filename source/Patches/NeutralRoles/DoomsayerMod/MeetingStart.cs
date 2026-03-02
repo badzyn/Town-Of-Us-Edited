@@ -57,7 +57,7 @@ namespace TownOfUsEdited.NeutralRoles.DoomsayerMod
             else if (player.Is(RoleEnum.Bomber) || player.Is(RoleEnum.Juggernaut)
                  || player.Is(RoleEnum.Sheriff) || player.Is(RoleEnum.Vigilante) || player.Is(RoleEnum.Jailor) || player.Is(RoleEnum.Shooter)
                  || player.Is(RoleEnum.Warlock) || player.Is(RoleEnum.Fighter) || player.Is(RoleEnum.Knight) || player.Is(RoleEnum.Poisoner)
-                 || player.Is(RoleEnum.Terrorist))
+                 || player.Is(RoleEnum.Terrorist) || player.Is(RoleEnum.Kamikaze))
                 return $"You observe that {player.GetDefaultOutfit().PlayerName} is capable of performing relentless attacks";
             else if (player.Is(RoleEnum.Witch) || player.Is(RoleEnum.Manipulator) || player.Is(RoleEnum.Pestilence) || player.Is(RoleEnum.Conjurer)
             || player.Is(RoleEnum.Assassin) || player.Is(RoleEnum.Ritualist) || player.Is(RoleEnum.HexMaster) || player.Is(RoleEnum.VoodooMaster))
@@ -100,11 +100,11 @@ namespace TownOfUsEdited.NeutralRoles.DoomsayerMod
                  || player.Is(RoleEnum.Veteran) || player.Is(RoleEnum.Troll) || player.Is(RoleEnum.Deputy)
                  || player.Is(RoleEnum.PotionMaster))
                 return "(Deputy, Executioner, Jester, Plumber, Politician, Potion Master, Troll, Mayor, Swapper, Madmate, Traitor or Veteran)";
-            else if (player.Is(RoleEnum.Bomber) || player.Is(RoleEnum.Juggernaut)
+            else if (player.Is(RoleEnum.Bomber) || player.Is(RoleEnum.Juggernaut) || player.Is(RoleEnum.Kamikaze)
                  || player.Is(RoleEnum.Sheriff) || player.Is(RoleEnum.Vigilante) || player.Is(RoleEnum.Jailor) || player.Is(RoleEnum.Shooter)
                  || player.Is(RoleEnum.Warlock) || player.Is(RoleEnum.Fighter) || player.Is(RoleEnum.Knight) || player.Is(RoleEnum.Poisoner)
                  || player.Is(RoleEnum.Terrorist))
-                return "(Bomber, Fighter, Jailor, Juggernaut, Knight, Poisoner, Sheriff, Shooter, Terrorist, Vigilante or Warlock)";
+                return "(Bomber, Fighter, Jailor, Kamikaze, Juggernaut, Knight, Poisoner, Sheriff, Shooter, Terrorist, Vigilante or Warlock)";
             else if (player.Is(RoleEnum.Witch) || player.Is(RoleEnum.Manipulator) || player.Is(RoleEnum.Pestilence) || player.Is(RoleEnum.Conjurer)
             || player.Is(RoleEnum.Assassin) || player.Is(RoleEnum.Ritualist) || player.Is(RoleEnum.HexMaster) || player.Is(RoleEnum.VoodooMaster))
                 return "(Assassin, Conjurer, Hex Master, Manipulator, Pestilence, Ritualist, Voodoo Master or Witch)";

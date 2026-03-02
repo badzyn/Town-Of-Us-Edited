@@ -49,6 +49,7 @@ namespace TownOfUsEdited.Roles
             if (CustomGameOptions.TraitorOn > 0 || (CustomGameOptions.MadmateOn > 0 && CustomGameOptions.MadmateOnImpoDeath == BecomeMadmateOptions.Impostor)) ColorMapping.Add("Traitor", Colors.Impostor);
             if (CustomGameOptions.BlackmailerOn > 0) ColorMapping.Add("Blackmailer", Colors.Impostor);
             if (CustomGameOptions.BomberOn > 0) ColorMapping.Add("Bomber", Colors.Impostor);
+            if (CustomGameOptions.KamikazeOn > 0) ColorMapping.Add("Kamikaze", Colors.Impostor);
             if (CustomGameOptions.ConjurerOn > 0) ColorMapping.Add("Conjurer", Colors.Impostor);
             if (CustomGameOptions.BountyHunterOn > 0) ColorMapping.Add("Bounty Hunter", Colors.Impostor);
             if (CustomGameOptions.WarlockOn > 0) ColorMapping.Add("Warlock", Colors.Impostor);

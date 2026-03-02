@@ -1,9 +1,10 @@
 ﻿using HarmonyLib;
+using System.Collections;
+using TownOfUsEdited;
 using UnityEngine;
 using Object = UnityEngine.Object;
-using System.Collections;
 
-namespace TownOfUsEdited.ImpostorRoles.BomberMod
+namespace TownOfUsEdited.ImpostorRoles.KamikazeMod
 {
     public class Bomb
     {
@@ -23,8 +24,8 @@ namespace TownOfUsEdited.ImpostorRoles.BomberMod
         {
             var BombPref = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             BombPref.name = "Bomb";
-            BombPref.transform.localScale = new Vector3(CustomGameOptions.DetonateRadius * ShipStatus.Instance.MaxLightRadius * 2f,
-                CustomGameOptions.DetonateRadius * ShipStatus.Instance.MaxLightRadius * 2f, CustomGameOptions.DetonateRadius * ShipStatus.Instance.MaxLightRadius * 2f);
+            BombPref.transform.localScale = new Vector3(CustomGameOptions.KamikazeDetonateRadius * ShipStatus.Instance.MaxLightRadius * 2f,
+                CustomGameOptions.KamikazeDetonateRadius * ShipStatus.Instance.MaxLightRadius * 2f, CustomGameOptions.KamikazeDetonateRadius * ShipStatus.Instance.MaxLightRadius * 2f);
             GameObject.Destroy(BombPref.GetComponent<SphereCollider>());
             BombPref.GetComponent<MeshRenderer>().material = Roles.Bomber.bombMaterial;
             BombPref.transform.position = location;
@@ -34,5 +35,18 @@ namespace TownOfUsEdited.ImpostorRoles.BomberMod
         }
     }
 
+    public class BombTeammate
+    {
+        public static Bomb TempBomb = null;
 
+        public static IEnumerator BombShowTeammate(Vector3 location)
+        {
+            TempBomb = BombExtentions.CreateBomb(location);
+
+            yield return (object)new WaitForSeconds(CustomGameOptions.KamikazeDetonateDelay + 0.5f);
+
+            try { BombExtentions.ClearBomb(TempBomb); }
+            catch { }
+        }
+    }
 }

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 
 namespace TownOfUsEdited.CustomOption
@@ -127,6 +128,7 @@ namespace TownOfUsEdited.CustomOption
         public static CustomNumberOption HypnotistOn;
         public static CustomNumberOption BlackmailerOn;
         public static CustomNumberOption JanitorOn;
+        public static CustomNumberOption KamikazeOn;
         public static CustomNumberOption MafiosoOn;
         public static CustomNumberOption MinerOn;
         public static CustomNumberOption ReviverOn;
@@ -702,6 +704,13 @@ namespace TownOfUsEdited.CustomOption
         public static CustomNumberOption DetonateRadius;
         public static CustomToggleOption BomberVent;
 
+        public static CustomHeaderOption Kamikaze;
+        public static CustomNumberOption KamikazeMaxKillInDetonation;
+        public static CustomNumberOption KamikazeDetonateDelay;
+        public static CustomNumberOption KamikazeDetonateRadius;
+        public static CustomToggleOption KamikazeVent;
+        public static CustomToggleOption KamikazeAllImpsSeeBomb;
+
         public static CustomHeaderOption Doomsayer;
         public static CustomNumberOption ObserveCooldown;
         public static CustomNumberOption DoomsayerGuessesToWin;
@@ -1069,6 +1078,8 @@ namespace TownOfUsEdited.CustomOption
             HypnotistOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Hypnotist</color>", 0f, 0f, 100f, 10f,
                 PercentFormat);
             JanitorOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Janitor</color>", 0f, 0f, 100f, 10f,
+                PercentFormat);
+            KamikazeOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Kamikaze</color>", 0f, 0f, 100f, 10f,
                 PercentFormat);
             MafiosoOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Mafioso</color>", 0f, 0f, 100f, 10f,
                 PercentFormat);
@@ -2190,6 +2201,11 @@ namespace TownOfUsEdited.CustomOption
             BlackmailInvisible =
                 new CustomToggleOption(num++, MultiMenu.imposter, "Only Target Sees Blackmail", false);
             LatestNonVote = new CustomNumberOption(num++, MultiMenu.imposter, "Maximum People Alive Where Blackmailed Can Vote", 5, 1, 15, 1);
+
+            Kamikaze = new CustomHeaderOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Kamikaze</color>");
+            KamikazeMaxKillInDetonation = new CustomNumberOption(num++, MultiMenu.imposter, "Maximum Kills By Explode", 5, 1, 10, 1);
+            KamikazeDetonateRadius = new CustomNumberOption(num++, MultiMenu.imposter, "Radius Of Explode", 0.15f, 0.05f, 0.25f, 0.05f);
+            KamikazeVent = new CustomToggleOption(num++, MultiMenu.imposter, "Kamikaze Can Vent", true);
 
             Converter = new CustomHeaderOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Converter</color>");
             ConvertCooldown =

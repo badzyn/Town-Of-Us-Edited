@@ -33,6 +33,7 @@ using TownOfUsEdited.ImpostorRoles.FreezerMod;
 using TownOfUsEdited.ImpostorRoles.MinerMod;
 using TownOfUsEdited.ImpostorRoles.WraithMod;
 using TownOfUsEdited.ImpostorRoles.TraitorMod;
+using TownOfUsEdited.ImpostorRoles.KamikazeMod;
 using TownOfUsEdited.ImpostorRoles.WitchMod;
 using TownOfUsEdited.Modifiers.AssassinMod;
 using TownOfUsEdited.NeutralRoles.DoomsayerMod;
@@ -1542,6 +1543,9 @@ namespace TownOfUsEdited
                                 SetTraitor.ChangeRole(traitorRole, selectedRole);
                                 break;
 
+                            case CustomRPC.Plant:
+                                if (PlayerControl.LocalPlayer.Data.IsImpostor()) Coroutines.Start(BombTeammate.BombShowTeammate(new Vector3(reader.ReadSingle(), reader.ReadSingle())));
+                                break;
                             case CustomRPC.Barrier:
                                 var cleric = Utils.PlayerById(reader.ReadByte());
                                 var clericRole = Role.GetRole<Cleric>(cleric);
@@ -3223,6 +3227,9 @@ namespace TownOfUsEdited
                     if (CustomGameOptions.ImpostorOn > 0)
                         ImpostorRoles.Add((typeof(Impostor), CustomGameOptions.ImpostorOn, false));
 
+                    if (CustomGameOptions.KamikazeOn > 0)
+                        ImpostorRoles.Add((typeof(Kamikaze), CustomGameOptions.KamikazeOn, false));
+
                     if (CustomGameOptions.PoisonerOn > 0)
                         ImpostorRoles.Add((typeof(Poisoner), CustomGameOptions.PoisonerOn, false));
 
@@ -3556,6 +3563,9 @@ namespace TownOfUsEdited
 
                         if (CustomGameOptions.HypnotistOn > 0)
                             ImpostorSupportRoles.Add((typeof(Hypnotist), CustomGameOptions.HypnotistOn, false || CustomGameOptions.UniqueRoles));
+                        
+                        if (CustomGameOptions.KamikazeOn > 0)
+                            ImpostorSupportRoles.Add((typeof(Kamikaze), CustomGameOptions.KamikazeOn, false || CustomGameOptions.UniqueRoles));
 
                         if (CustomGameOptions.ShooterOn > 0)
                             ImpostorKillingRoles.Add((typeof(Shooter), CustomGameOptions.ShooterOn, false || CustomGameOptions.UniqueRoles));

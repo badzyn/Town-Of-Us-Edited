@@ -148,6 +148,7 @@ namespace TownOfUsEdited
         public static int CrewmateOn => (int)Generate.CrewmateOn.Get();
         public static int ImitatorOn => (int)Generate.ImitatorOn.Get();
         public static int BomberOn => (int)Generate.BomberOn.Get();
+        public static int KamikazeOn => (int)Generate.KamikazeOn.Get();
         public static int ConjurerOn => (int)Generate.ConjurerOn.Get();
         public static int BountyHunterOn => (int)Generate.BountyHunterOn.Get();
         public static int DoomsayerOn => (int)Generate.DoomsayerOn.Get();
@@ -634,5 +635,10 @@ namespace TownOfUsEdited
         public static float WatcherCooldown => (float)Generate.WatcherCooldown.Get();
         public static bool LoResetOnNewRound => Generate.LoResetOnNewRound.Get();
         public static int MaxWatches => (int)Generate.MaxWatches.Get();
+        public static float KamikazeDetonateDelay => 0f;
+        public static int KamikazeMaxKillInDetonation => (int)Generate.KamikazeMaxKillInDetonation.Get();
+        public static float KamikazeDetonateRadius => (float)Generate.KamikazeDetonateRadius.Get();
+        public static bool KamikazeVent => Generate.KamikazeVent.Get();
+        public static bool KamikazeAllImpsSeeBomb => false;
     }
 }

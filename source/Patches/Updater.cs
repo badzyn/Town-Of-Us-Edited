@@ -104,7 +104,7 @@ namespace TownOfUsEdited
 
         private static List<ModUpdater.UpdateData> GetVersioning()
         {
-            var text = ModUpdater.Httpclient.GetAsync("https://raw.githubusercontent.com/raspberrygitq/Town-Of-Us-Edited/refs/heads/master/source/Versioning.json")
+            var text = ModUpdater.Httpclient.GetAsync("https://raw.githubusercontent.com/badzyn/Town-Of-Us-Edited/refs/heads/master/source/Versioning.json")
                                  .GetAwaiter().GetResult().Content.ReadAsStringAsync().Result;
             var data = JsonSerializer.Deserialize<List<ModUpdater.UpdateData>>(text, options: new() { ReadCommentHandling = JsonCommentHandling.Skip });
             return data;
@@ -219,7 +219,7 @@ namespace TownOfUsEdited
                 string githubURI = "";
                 if (updateType == "TOU")
                 {
-                    githubURI = "https://api.github.com/repos/raspberrygitq/Town-Of-Us-Edited/releases/latest";
+                    githubURI = "https://api.github.com/repos/badzyn/Town-Of-Us-Edited/releases/latest";
                 }
                 else if (updateType == "Submerged")
                 {

@@ -81,6 +81,7 @@ namespace TownOfUsEdited
         TurnPestilence,
         Disperse,
         Escape,
+        Plant,
         ChameleonSwoop,
         ChameleonUnSwoop,
         Imitate,

@@ -153,6 +153,7 @@ namespace TownOfUsEdited
         public static Sprite AdminSprite;
         public static Sprite JailCellSprite;
         public static Sprite CrusadeSprite;
+        public static Sprite SuicideSprite;
 
         public static Sprite ToUBanner;
         public static Sprite UpdateTOUButton;
@@ -305,6 +306,7 @@ namespace TownOfUsEdited
             AdminSprite = CreateSprite("TownOfUsEdited.Resources.Admin.png");
             JailCellSprite = CreateSprite("TownOfUsEdited.Resources.JailCell.png");
             CrusadeSprite = CreateSprite("TownOfUsEdited.Resources.Crusade.png");
+            SuicideSprite = CreateSprite("TownOfUsEdited.Resources.Suicide.png");
 
             ToUBanner = CreateSprite("TownOfUsEdited.Resources.TownOfUsEditedBanner.png");
             UpdateTOUButton = CreateSprite("TownOfUsEdited.Resources.UpdateToUButton.png");
