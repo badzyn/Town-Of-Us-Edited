@@ -24,7 +24,7 @@ using UnityEngine.CrashReportHandler;
 
 namespace TownOfUsEdited
 {
-    [BepInPlugin(Id, "Town Of Us Edited", VersionString)]
+    [BepInPlugin(Id, "Town Of Us Edited Unofficial", VersionString)]
     [BepInDependency(ReactorPlugin.Id)]
     [BepInDependency(SubmergedCompatibility.SUBMERGED_GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [ReactorModFlags(Reactor.Networking.ModFlags.RequireOnAllClients)]
@@ -33,7 +33,7 @@ namespace TownOfUsEdited
     public class TownOfUsEdited : BasePlugin
     {
         public const string Id = "com.lekillerdesgames.townofusedited";
-        public const string VersionString = "2.3.0";
+        public const string VersionString = "0.0.1";
         public static Version Version = Version.Parse(VersionString);
         public const string VersionTag = "<color=#00F0FF></color>";
 
