@@ -807,6 +807,10 @@ namespace TownOfUsEdited.Roles
             {
                 return "The <color=#FF0000FF>Poisoner</color> is an Impostor role which can Poison players instead of performing regular kills, killing them after a split seconds.";
             }
+            else if (role == "Kamikaze")
+            {
+                return "The <color=#FF0000FF>Kamikaze</color> is an Impostor role which can use its ability to go on a kamikaze attack, killing all nearby players but also themselves.";
+            }
             else if (role == "Shooter")
             {
                 return "The <color=#FF0000FF>Shooter</color> is an Impostor role which can store bullets instead of instantly killing a player.\nThis will reset the Shooter's kill cooldown but will allow the Shooter to have no kill cooldown the next time it kills and potentially performing multiple kills at once.";

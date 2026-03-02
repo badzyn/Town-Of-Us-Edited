@@ -10,7 +10,7 @@ namespace TownOfUsEdited
         public static void Postfix(VersionShower __instance)
         {
             var text = __instance.text;
-            text.text += " - <color=#00FF00FF><color=#EE9D01>Town Of Us</color><b><color=#AA00FF> Edited</color></b> v" + TownOfUsEdited.VersionString + "</color>" + TownOfUsEdited.VersionTag;
+            text.text += " - <color=#00FF00FF><color=#EE9D01>Town Of Us</color><b><color=#AA00FF> Edited </color><color=#FF0000FF>Unofficial</color></b> v" + TownOfUsEdited.VersionString + "</color>" + TownOfUsEdited.VersionTag;
             text.transform.localPosition += new Vector3(-0.8f, -0.08f, 0f);
 
             if (GameObject.Find("RightPanel"))

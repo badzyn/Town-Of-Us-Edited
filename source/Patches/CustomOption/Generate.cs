@@ -116,6 +116,7 @@ namespace TownOfUsEdited.CustomOption
         public static CustomNumberOption PoisonerOn;
         public static CustomNumberOption ShooterOn;
         public static CustomNumberOption BomberOn;
+        public static CustomNumberOption KamikazeOn;
         public static CustomNumberOption TraitorOn;
         public static CustomNumberOption WarlockOn;
         public static CustomNumberOption ManipulatorOn;
@@ -128,7 +129,6 @@ namespace TownOfUsEdited.CustomOption
         public static CustomNumberOption HypnotistOn;
         public static CustomNumberOption BlackmailerOn;
         public static CustomNumberOption JanitorOn;
-        public static CustomNumberOption KamikazeOn;
         public static CustomNumberOption MafiosoOn;
         public static CustomNumberOption MinerOn;
         public static CustomNumberOption ReviverOn;
@@ -1053,6 +1053,8 @@ namespace TownOfUsEdited.CustomOption
             ImpostorKillingRoles = new CustomHeaderOption(num++, MultiMenu.imposter, "Impostor Killing Roles");
             BomberOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Bomber</color>", 0f, 0f, 100f, 10f,
                 PercentFormat);
+            KamikazeOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Kamikaze</color>", 0f, 0f, 100f, 10f,
+                PercentFormat);
             BountyHunterOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Bounty Hunter</color>", 0f, 0f, 100f, 10f,
                 PercentFormat);
             ConjurerOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Conjurer</color>", 0f, 0f, 100f, 10f,
@@ -1078,8 +1080,6 @@ namespace TownOfUsEdited.CustomOption
             HypnotistOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Hypnotist</color>", 0f, 0f, 100f, 10f,
                 PercentFormat);
             JanitorOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Janitor</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            KamikazeOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Kamikaze</color>", 0f, 0f, 100f, 10f,
                 PercentFormat);
             MafiosoOn = new CustomNumberOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Mafioso</color>", 0f, 0f, 100f, 10f,
                 PercentFormat);
@@ -2155,6 +2155,11 @@ namespace TownOfUsEdited.CustomOption
             BomberVent =
                 new CustomToggleOption(num++, MultiMenu.imposter, "Bomber Can Vent", false);
 
+            Kamikaze = new CustomHeaderOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Kamikaze</color>");
+            KamikazeMaxKillInDetonation = new CustomNumberOption(num++, MultiMenu.imposter, "Maximum Kills By Explode", 5, 1, 10, 1);
+            KamikazeDetonateRadius = new CustomNumberOption(num++, MultiMenu.imposter, "Radius Of Explode", 0.15f, 0.05f, 0.25f, 0.05f);
+            KamikazeVent = new CustomToggleOption(num++, MultiMenu.imposter, "Kamikaze Can Vent", true);
+
             BountyHunter =
                 new CustomHeaderOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Bounty Hunter</color>");
             TargetShortCooldown =
@@ -2201,11 +2206,6 @@ namespace TownOfUsEdited.CustomOption
             BlackmailInvisible =
                 new CustomToggleOption(num++, MultiMenu.imposter, "Only Target Sees Blackmail", false);
             LatestNonVote = new CustomNumberOption(num++, MultiMenu.imposter, "Maximum People Alive Where Blackmailed Can Vote", 5, 1, 15, 1);
-
-            Kamikaze = new CustomHeaderOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Kamikaze</color>");
-            KamikazeMaxKillInDetonation = new CustomNumberOption(num++, MultiMenu.imposter, "Maximum Kills By Explode", 5, 1, 10, 1);
-            KamikazeDetonateRadius = new CustomNumberOption(num++, MultiMenu.imposter, "Radius Of Explode", 0.15f, 0.05f, 0.25f, 0.05f);
-            KamikazeVent = new CustomToggleOption(num++, MultiMenu.imposter, "Kamikaze Can Vent", true);
 
             Converter = new CustomHeaderOption(num++, MultiMenu.imposter, "<color=#FF0000FF>Converter</color>");
             ConvertCooldown =

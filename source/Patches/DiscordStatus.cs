@@ -12,7 +12,7 @@ namespace TownOfUsEdited.Patches
     {
         private const long ClientId = 1455654056029585683;
         private const uint SteamAppId = 945360;
-        private static string ModInfo = $"Town Of Us Edited v{TownOfUsEdited.VersionString}" + (false && !TownOfUsEdited.VersionTag.Contains("beta") ? " (DEV)" : string.Empty);
+        private static string ModInfo = $"Town Of Us Edited Unofficial v{TownOfUsEdited.VersionString}" + (false && !TownOfUsEdited.VersionTag.Contains("beta") ? " (DEV)" : string.Empty);
         private static string _smallIcon = "???";
 
         [HarmonyPrefix]
