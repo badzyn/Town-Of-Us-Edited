@@ -138,17 +138,7 @@ namespace TownOfUsEdited.ImpostorRoles.WitchMod
                     ShowHideButtonsDoom.HideButtonsDoom(doomsayer);
                 }
 
-                if (player.Is(RoleEnum.Politician))
-                {
-                    var politician = Role.GetRole<Politician>(PlayerControl.LocalPlayer);
-                    politician.RevealButton.Destroy();
-                }
-
-                if (player.Is(RoleEnum.Mayor))
-                {
-                    var mayor = Role.GetRole<Mayor>(PlayerControl.LocalPlayer);
-                    mayor.RevealButton.Destroy();
-                }
+                
             }
             player.Die(DeathReason.Kill, false);
             if (PlayerControl.LocalPlayer == witch)

@@ -49,7 +49,7 @@ namespace TownOfUsEdited.NeutralRoles.DoomsayerMod
                 || player.Is(RoleEnum.GuardianAngel) || player.Is(RoleEnum.Medic) || player.Is(RoleEnum.Survivor) || player.Is(RoleEnum.Paranoïac)
                 || player.Is(RoleEnum.Bodyguard) || player.Is(RoleEnum.Spiritualist) || player.Is(RoleEnum.Warden) || player.Is(RoleEnum.Cleric))
                 return $"You observe that {player.GetDefaultOutfit().PlayerName} hides to protect themself or others";
-            else if (player.Is(RoleEnum.Executioner) || player.Is(RoleEnum.Jester) || player.Is(RoleEnum.Mayor) || player.Is(RoleEnum.Politician)
+            else if (player.Is(RoleEnum.Executioner) || player.Is(RoleEnum.Jester) || player.Is(RoleEnum.President)
                  || player.Is(RoleEnum.Swapper) || player.Is(RoleEnum.Traitor) || player.Is(Faction.Madmates) || player.Is(RoleEnum.Plumber)
                  || player.Is(RoleEnum.Veteran) || player.Is(RoleEnum.Troll) || player.Is(RoleEnum.Deputy)
                  || player.Is(RoleEnum.PotionMaster))
@@ -95,11 +95,11 @@ namespace TownOfUsEdited.NeutralRoles.DoomsayerMod
                 || player.Is(RoleEnum.GuardianAngel) || player.Is(RoleEnum.Medic) || player.Is(RoleEnum.Survivor) || player.Is(RoleEnum.Paranoïac)
                 || player.Is(RoleEnum.Bodyguard) || player.Is(RoleEnum.Spiritualist) || player.Is(RoleEnum.Warden) || player.Is(RoleEnum.Cleric))
                 return "(Bodyguard, Cleric, Engineer, Escapist, Grenadier, Guardian Angel, Medic, Paranoïac, Shifter, Spiritualist, Survivor or Warden)";
-            else if (player.Is(RoleEnum.Executioner) || player.Is(RoleEnum.Jester) || player.Is(RoleEnum.Mayor) || player.Is(RoleEnum.Politician)
+            else if (player.Is(RoleEnum.Executioner) || player.Is(RoleEnum.Jester) || player.Is(RoleEnum.President)
                  || player.Is(RoleEnum.Swapper) || player.Is(RoleEnum.Traitor) || player.Is(Faction.Madmates) || player.Is(RoleEnum.Plumber)
                  || player.Is(RoleEnum.Veteran) || player.Is(RoleEnum.Troll) || player.Is(RoleEnum.Deputy)
                  || player.Is(RoleEnum.PotionMaster))
-                return "(Deputy, Executioner, Jester, Plumber, Politician, Potion Master, Troll, Mayor, Swapper, Madmate, Traitor or Veteran)";
+                return "(Deputy, Executioner, Jester, Plumber, Potion Master, Troll, President, Swapper, Madmate, Traitor or Veteran)";
             else if (player.Is(RoleEnum.Bomber) || player.Is(RoleEnum.Juggernaut) || player.Is(RoleEnum.Kamikaze)
                  || player.Is(RoleEnum.Sheriff) || player.Is(RoleEnum.Vigilante) || player.Is(RoleEnum.Jailor) || player.Is(RoleEnum.Shooter)
                  || player.Is(RoleEnum.Warlock) || player.Is(RoleEnum.Fighter) || player.Is(RoleEnum.Knight) || player.Is(RoleEnum.Poisoner)

@@ -182,9 +182,9 @@ namespace TownOfUsEdited.Roles
                 {
                     HudManager.Instance.ShowPopUp("You are the <color=#9900FFFF>Warden</color>, you can use your button on someone to fortify them, they will be immune to interactions and if someone does interact with them, you and your target will get notified.\nNote that this doesn't protect from kills.");
                 }
-                if (pc.Is(RoleEnum.Mayor))
+                if (pc.Is(RoleEnum.President))
                 {
-                    HudManager.Instance.ShowPopUp("You are the <color=#704FA8FF>Mayor</color>, now that you have been revealed to other players, everyone know who you are and you have two extra votes when voting.\nTo balance this, your vision is reduced.");
+                    HudManager.Instance.ShowPopUp("You are the <color=#704FA8FF>President</color>, you can abstain your vote for the next round");
                 }
                 if (pc.Is(RoleEnum.Medium))
                 {
@@ -206,10 +206,7 @@ namespace TownOfUsEdited.Roles
                 {
                     HudManager.Instance.ShowPopUp("You are the <color=#4CFAAB>Informant</color>, you can access vitals and admin from anywhere on the map.");
                 }
-                if (pc.Is(RoleEnum.Politician))
-                {
-                    HudManager.Instance.ShowPopUp("You are the <color=#660099FF>Politician</color>, you can use your campaign abilities to get voters to be elected as the new mayor.\nYou can also use the reveal button in meeting to reveal yourself as the new mayor but if less than half of the players in the lobby voted for you, then the campaign will fail and you won't be able to campaign for one round.\nNote that only Crewmate roles will count as voters.");
-                }
+                
                 // Neutrals Roles infos
                 if (pc.Is(RoleEnum.Amnesiac))
                 {
@@ -331,6 +328,10 @@ namespace TownOfUsEdited.Roles
                 if (pc.Is(RoleEnum.Escapist))
                 {
                     HudManager.Instance.ShowPopUp("You are the <color=#FF0000FF>Escapist</color>, you can use your Mark button to set a point on the map, and then you can teleport to that point using the Recall button.");
+                }
+                if (pc.Is(RoleEnum.Kamikaze))
+                {
+                    HudManager.Instance.ShowPopUp("You are the <color=#FF0000FF>Kamikaze</color>, sacrifice yourself for greater good");
                 }
                 if (pc.Is(RoleEnum.Grenadier))
                 {
@@ -633,9 +634,9 @@ namespace TownOfUsEdited.Roles
             {
                 return "The <color=#9900FFFF>Warden</color> can fortify a player, making the Warden and them noticed when someone interacts with them.";
             }
-            else if (role == "Mayor")
+            else if (role == "President")
             {
-                return "The <color=#704FA8FF>Mayor</color> is known to everyone and will have more votes than usual during the meeting.";
+                return "The <color=#704FA8FF>President</color> can abstain its vote for the next round.";
             }
             else if (role == "Medium")
             {
@@ -657,10 +658,7 @@ namespace TownOfUsEdited.Roles
             {
                 return "The <color=#4CFAAB>Informant</color> can access vitals or admin from anywhere even if the map doesn't have any vitals.";
             }
-            else if (role == "Politician")
-            {
-                return "The <color=#660099FF>Politician</color> can use its ability to campaign and getting voters.\nThen, during the meeting, the Politician may reveal themselves as the new <color=#704FA8FF>Mayor</color>.\nIf the Politician used its ability on at least half of the Crewmates, the reveal will be successful, else the Politician won't be able to campaign for one round.\nNote that only Crewmates will count as voters.";
-            }
+           
             // neutrals
             else if (role == "Amnesiac")
             {
@@ -948,7 +946,7 @@ namespace TownOfUsEdited.Roles
             {
                 return "<color=#8d0000>Vengeful</color> is a Crewmate Modifier which allows you to kill someone once after completing all of your tasks.";
             }
-            else if (modifiers == "ButtonBarry")
+            else if (modifiers == "Buttonbarry")
             {
                 return "<color=#E600FFFF>Button Barry</color> is a Global Modifier which allows you to call a meeting from anywhere once.";
             }
@@ -988,7 +986,7 @@ namespace TownOfUsEdited.Roles
             {
                 return "<color=#FFB3CCFF>Shy</color> is a Global Modifier which makes you slowly turn invisible when not moving.";
             }
-            else if (modifiers == "SixthSense")
+            else if (modifiers == "Sixthsense")
             {
                 return "<color=#D9FF8CFF>Sixth Sense</color> is a Global Modifier which makes you know when anyone interacts with you.";
             }
@@ -1016,7 +1014,7 @@ namespace TownOfUsEdited.Roles
             {
                 return "<color=#FF0000>Bloodlust</color> is an Impostor Modifier which makes your kill cooldown divided by two after killing two players in the same round.";
             }
-            else if (modifiers == "DoubleShot")
+            else if (modifiers == "Doubleshot")
             {
                 return "<color=#FF0000>Double Shot</color> is an Impostor Modifier which makes you able to guess the role of a player wrong as Assassin once in the game without any consequence.";
             }

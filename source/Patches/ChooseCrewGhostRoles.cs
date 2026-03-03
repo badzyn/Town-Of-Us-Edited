@@ -36,7 +36,7 @@ namespace TownOfUsEdited.ChooseCrewGhostRoles
             int index = random.Next(GhostRoles.Count);
             var chosenRole = GhostRoles[index];
             GhostRoles.RemoveAt(index);
-            var toChooseFromCrew = PlayerControl.AllPlayerControls.ToArray().Where(x => x.Is(Faction.Crewmates) && !x.Is(RoleEnum.Mayor) && !x.Is(RoleEnum.Politician) && !x.Is(ModifierEnum.Lover) && (x.Data.IsDead || x == exiled)).ToList();
+            var toChooseFromCrew = PlayerControl.AllPlayerControls.ToArray().Where(x => x.Is(Faction.Crewmates) && !x.Is(RoleEnum.President) && !x.Is(ModifierEnum.Lover) && (x.Data.IsDead || x == exiled)).ToList();
             toChooseFromCrew.RemoveAll(player => SetHaunter.WillBeHaunter == player);
             toChooseFromCrew.RemoveAll(player => SetGuardian.WillBeGuardian == player);
             toChooseFromCrew.RemoveAll(player => SetHelper.WillBeHelper == player);

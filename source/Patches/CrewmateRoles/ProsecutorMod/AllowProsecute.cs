@@ -212,11 +212,7 @@ namespace TownOfUsEdited.CrewmateRoles.ProsecutorMod
                         ShowHideButtonsRitualist.HideButtons(ritualist);
                     }
 
-                    if (player.Is(RoleEnum.Mayor))
-                    {
-                        var mayor = Role.GetRole<Mayor>(PlayerControl.LocalPlayer);
-                        mayor.RevealButton.Destroy();
-                    }
+                    
 
                     if (player.Is(RoleEnum.Deputy))
                     {

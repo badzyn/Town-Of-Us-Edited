@@ -53,11 +53,7 @@ namespace TownOfUsEdited
                     {
                         __result = __instance.MaxLightRadius * GameOptionsManager.Instance.currentNormalGameOptions.CrewLightMod / 2;
                     }
-                    else if (player._object.Is(RoleEnum.Mayor))
-                    {
-                        __result = Mathf.Lerp(__instance.MinLightRadius, __instance.MaxLightRadius / 3, t) *
-                            GameOptionsManager.Instance.currentNormalGameOptions.CrewLightMod;
-                    }
+                    
                     else
                     {
                         __result = Mathf.Lerp(__instance.MinLightRadius, __instance.MaxLightRadius / 2, t) *
@@ -102,16 +98,7 @@ namespace TownOfUsEdited
                 }
             }
 
-            if (player._object.Is(RoleEnum.Mayor))
-            {
-                var role = Role.GetRole<Mayor>(player._object);
-                if (role.Revealed)
-                {
-                    __result = Mathf.Lerp(__instance.MinLightRadius, __instance.MaxLightRadius / 2, t) *
-                       GameOptionsManager.Instance.currentNormalGameOptions.CrewLightMod;
-                    return false;
-                }
-            }
+            
 
             __result = Mathf.Lerp(__instance.MinLightRadius, __instance.MaxLightRadius, t) *
                        GameOptionsManager.Instance.currentNormalGameOptions.CrewLightMod;

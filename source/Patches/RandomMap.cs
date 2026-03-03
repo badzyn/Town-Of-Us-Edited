@@ -167,7 +167,6 @@ namespace TownOfUsEdited
             Generate.StakeCooldown.Set((float)Generate.StakeCooldown.Value + change, false);
             Generate.ChargeUpDuration.Set((float)Generate.ChargeUpDuration.Value + change, false);
             Generate.AbilityCooldown.Set((float)Generate.AbilityCooldown.Value + change, false);
-            Generate.CampaignCooldown.Set((float)Generate.CampaignCooldown.Value + change, false);
             Generate.HypnotiseCooldown.Set((float)Generate.HypnotiseCooldown.Value + change, false);
             Generate.JailCD.Set((float)Generate.JailCD.Value + change, false);
             Generate.ReapCooldown.Set((float)Generate.ReapCooldown.Value + change, false);

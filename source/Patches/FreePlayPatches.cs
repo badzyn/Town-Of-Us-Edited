@@ -350,8 +350,7 @@ namespace TownOfUsEdited.Patches
             else if (role == typeof(Imitator)) newRole = new Imitator(PlayerControl.LocalPlayer);
             else if (role == typeof(Medium)) newRole = new Medium(PlayerControl.LocalPlayer);
             else if (role == typeof(Paranoïac)) newRole = new Paranoïac(PlayerControl.LocalPlayer);
-            else if (role == typeof(Politician)) newRole = new Politician(PlayerControl.LocalPlayer);
-            else if (role == typeof(Mayor)) newRole = new Mayor(PlayerControl.LocalPlayer);
+            else if (role == typeof(President)) newRole = new President(PlayerControl.LocalPlayer);
             else if (role == typeof(Prosecutor)) newRole = new Prosecutor(PlayerControl.LocalPlayer);
             else if (role == typeof(TimeLord)) newRole = new TimeLord(PlayerControl.LocalPlayer);
             else if (role == typeof(Swapper)) newRole = new Swapper(PlayerControl.LocalPlayer);
@@ -394,6 +393,7 @@ namespace TownOfUsEdited.Patches
             else if (role == typeof(Swooper)) newRole = new Swooper(PlayerControl.LocalPlayer);
             else if (role == typeof(Venerer)) newRole = new Venerer(PlayerControl.LocalPlayer);
             else if (role == typeof(Bomber)) newRole = new Bomber(PlayerControl.LocalPlayer);
+            else if (role == typeof(Kamikaze)) newRole = new Kamikaze(PlayerControl.LocalPlayer);
             else if (role == typeof(BountyHunter)) newRole = new BountyHunter(PlayerControl.LocalPlayer);
             else if (role == typeof(Conjurer)) newRole = new Conjurer(PlayerControl.LocalPlayer);
             else if (role == typeof(Manipulator)) newRole = new Manipulator(PlayerControl.LocalPlayer);
@@ -590,7 +590,7 @@ namespace TownOfUsEdited.Patches
                     typeof(Lookout), typeof(Mystic), typeof(Seer), typeof(Snitch), typeof(Spy), typeof(Tracker),
                     typeof(Trapper), typeof(Watcher), typeof(Avenger), typeof(Deputy), typeof(Fighter), typeof(Hunter),
                     typeof(Knight), typeof(Sheriff), typeof(VampireHunter), typeof(Veteran), typeof(Vigilante),
-                    typeof(Jailor), typeof(Mayor), typeof(Politician), typeof(Prosecutor), typeof(Swapper), typeof(TimeLord),
+                    typeof(Jailor), typeof(President), typeof(Prosecutor), typeof(Swapper), typeof(TimeLord),
                     typeof(Altruist), typeof(Bodyguard), typeof(Cleric), typeof(Crusader), typeof(Doctor), typeof(Medic),
                     typeof(Oracle), typeof(Warden), typeof(Engineer), typeof(Imitator),
                     typeof(Medium), typeof(Paranoïac), typeof(Plumber), typeof(Transporter) ];

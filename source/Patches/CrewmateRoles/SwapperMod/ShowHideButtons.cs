@@ -1,8 +1,9 @@
 using HarmonyLib;
+using Hazel;
 using Il2CppInterop.Runtime.InteropTypes.Arrays;
 using System.Collections.Generic;
 using System.Linq;
-using TownOfUsEdited.CrewmateRoles.MayorMod;
+using TownOfUsEdited.CrewmateRoles.PresidentMod;
 using TownOfUsEdited.Extensions;
 using TownOfUsEdited.Roles;
 using UnityEngine;
@@ -160,6 +161,15 @@ namespace TownOfUsEdited.CrewmateRoles.SwapperMod
                             VoterId = playerVoteArea.TargetPlayerId,
                             VotedForId = playerVoteArea.VotedFor
                         };
+                    }
+
+                    foreach (var role in Role.GetRoles(RoleEnum.President))
+                    {
+                        var writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId,
+                            (byte)CustomRPC.SetExtraVotes, SendOption.Reliable, -1);
+                        writer.Write(role.Player.PlayerId);
+                        writer.WriteBytesAndSize(((President)role).ExtraVotes.ToArray());
+                        AmongUsClient.Instance.FinishRpcImmediately(writer);
                     }
 
                     __instance.RpcVotingComplete(array, exiled, tie);

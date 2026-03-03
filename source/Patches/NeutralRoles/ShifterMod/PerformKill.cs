@@ -111,7 +111,7 @@ namespace TownOfUsEdited.Patches.NeutralRoles.ShifterMod
                 case RoleEnum.Fighter:
                 case RoleEnum.Knight:
                 case RoleEnum.Engineer:
-                case RoleEnum.Mayor:
+                case RoleEnum.President:
                 case RoleEnum.Swapper:
                 case RoleEnum.Investigator:
                 case RoleEnum.Medic:
@@ -148,7 +148,6 @@ namespace TownOfUsEdited.Patches.NeutralRoles.ShifterMod
                 case RoleEnum.Hunter:
                 case RoleEnum.Paranoïac:
                 case RoleEnum.Warden:
-                case RoleEnum.Politician:
                 case RoleEnum.Plumber:
                 case RoleEnum.Cleric:
                 case RoleEnum.Watcher:
@@ -562,18 +561,13 @@ namespace TownOfUsEdited.Patches.NeutralRoles.ShifterMod
                 medicRole.ShieldedPlayer = null;
             }
 
-            else if (role == RoleEnum.Mayor)
-            {
-                var mayorRole = Role.GetRole<Mayor>(shifter);
-                mayorRole.Revealed = false;
-                HudManager.Instance.KillButton.gameObject.SetActive(false);
-            }
+            
 
-            else if (role == RoleEnum.Politician)
+            else if (role == RoleEnum.President)
             {
-                var pnRole = Role.GetRole<Politician>(shifter);
-                pnRole.CampaignedPlayers.RemoveRange(0, pnRole.CampaignedPlayers.Count);
-                pnRole.Cooldown = CustomGameOptions.CampaignCd;
+                var presidentRole = Role.GetRole<President>(shifter);
+                presidentRole.VoteBank = CustomGameOptions.PresidentVoteBank;
+                HudManager.Instance.KillButton.gameObject.SetActive(false);
             }
 
             else if (role == RoleEnum.Prosecutor)

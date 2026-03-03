@@ -90,14 +90,7 @@ namespace FlashlightPatch
                     __instance.lightSource.SetupLightingForGameplay(hasFlashlight, CustomGameOptions.CrewmateFlashlightVision, __instance.TargetFlashlight.transform);
                 }
             }
-            else if (PlayerControl.LocalPlayer.Is(RoleEnum.Mayor))
-            {
-                var role = Role.GetRole<Mayor>(PlayerControl.LocalPlayer);
-                if (role.Revealed)
-                {
-                    __instance.lightSource.SetupLightingForGameplay(hasFlashlight, CustomGameOptions.CrewmateFlashlightVision / 2, __instance.TargetFlashlight.transform);
-                }
-            }
+            
             else
             {
                 __instance.lightSource.SetupLightingForGameplay(hasFlashlight, CustomGameOptions.CrewmateFlashlightVision, __instance.TargetFlashlight.transform);

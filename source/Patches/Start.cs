@@ -117,12 +117,6 @@ namespace TownOfUsEdited.Patches
                 oracle.BlessCooldown = CustomGameOptions.InitialCooldowns;
             }
 
-            if (PlayerControl.LocalPlayer.Is(RoleEnum.Politician))
-            {
-                var politician = Role.GetRole<Politician>(PlayerControl.LocalPlayer);
-                politician.Cooldown = CustomGameOptions.InitialCooldowns;
-            }
-
             if (PlayerControl.LocalPlayer.Is(RoleEnum.SoulCollector))
             {
                 var sc = Role.GetRole<SoulCollector>(PlayerControl.LocalPlayer);

@@ -65,7 +65,7 @@ namespace TownOfUsEdited
     }
     public static class CustomGameOptions
     {
-        public static int PoliticianOn => (int)Generate.PoliticianOn.Get();
+        public static int PresidentOn => (int)Generate.PresidentOn.Get();
         public static int PlumberOn => (int)Generate.PlumberOn.Get();
         public static int MercenaryOn => (int)Generate.MercenaryOn.Get();
         public static int ClericOn => (int)Generate.ClericOn.Get();
@@ -409,7 +409,6 @@ namespace TownOfUsEdited
         public static bool GrenadierVent => Generate.GrenadierVent.Get();
         public static float FlashRadius => Generate.FlashRadius.Get();
         public static int LovingImpPercent => (int)Generate.LovingImpPercent.Get();
-        public static float CampaignCd => Generate.CampaignCooldown.Get();
         public static bool KilledOnAlert => Generate.KilledOnAlert.Get();
         public static float AlertCd => Generate.AlertCooldown.Get();
         public static float HelperCD => Generate.HelperCooldown.Get();
@@ -613,6 +612,8 @@ namespace TownOfUsEdited
         public static bool HunterBodyReport => Generate.HunterBodyReport.Get();
         public static bool RetributionOnVote => Generate.RetributionOnVote.Get();
         public static bool DoomsayerCantObserve => Generate.DoomsayerCantObserve.Get();
+        public static int PresidentVoteBank => (int)Generate.PresidentVoteBank.Get();
+        public static float PresidentMaximumBank => Generate.PresidentMaximumBank.Get();
         public static bool SCVent => Generate.SCVent.Get();
         public static float InvisDelay => Generate.InvisDelay.Get();
         public static float TransformInvisDuration => Generate.TransformInvisDuration.Get();

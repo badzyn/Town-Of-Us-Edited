@@ -73,7 +73,7 @@ namespace TownOfUsEdited.Roles
             if (CustomGameOptions.OracleOn > 0) ColorMapping.Add("Oracle", Colors.Oracle);
             if (CustomGameOptions.AurialOn > 0) ColorMapping.Add("Aurial", Colors.Aurial);
             if (CustomGameOptions.WardenOn > 0) ColorMapping.Add("Warden", Colors.Warden);
-            if (CustomGameOptions.PoliticianOn > 0) ColorMapping.Add("Politician", Colors.Politician);
+            if (CustomGameOptions.PresidentOn > 0) ColorMapping.Add("President", Colors.Mayor);
             if (CustomGameOptions.PlumberOn > 0) ColorMapping.Add("Plumber", Colors.Plumber);
             if (CustomGameOptions.ClericOn > 0) ColorMapping.Add("Cleric", Colors.Cleric);
             if (CustomGameOptions.WatcherOn > 0) ColorMapping.Add("Watcher", Colors.Lookout);

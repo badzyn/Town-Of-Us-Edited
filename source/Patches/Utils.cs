@@ -192,9 +192,9 @@ namespace TownOfUsEdited
             {
                 madmate.TaskText = () => "Take down one ennemy";
             }
-            else if (Madmate.Is(RoleEnum.Mayor))
+            else if (Madmate.Is(RoleEnum.President))
             {
-                madmate.TaskText = () => "Use your vote advantage to benefit the Impostors";
+                madmate.TaskText = () => "Save your votes to vote multiple times";
             }
             else if (Madmate.Is(RoleEnum.Medic))
             {
@@ -359,9 +359,9 @@ namespace TownOfUsEdited
             {
                 crewmate.TaskText = () => $"Execute evildoers but not {Palette.CrewmateBlue.ToTextColor()}Crewmates</color>";
             }
-            else if (Crewmate.Is(RoleEnum.Mayor))
+            else if (Crewmate.Is(RoleEnum.President))
             {
-                crewmate.TaskText = () => "Reveal yourself when the time is right";
+                crewmate.TaskText = () => "Save your votes to vote multiple times";
             }
             else if (Crewmate.Is(RoleEnum.Medic))
             {
@@ -583,7 +583,7 @@ namespace TownOfUsEdited
         public static bool IsCrewKiller(this PlayerControl player)
         {
             if (!CustomGameOptions.CrewKillersContinue) return false;
-            if (player.Is(RoleEnum.Mayor) || player.Is(RoleEnum.Politician) || player.Is(RoleEnum.Swapper) ||
+            if (player.Is(RoleEnum.Swapper) ||
                 player.Is(RoleEnum.Sheriff) || player.Is(RoleEnum.Avenger) || player.Is(RoleEnum.Fighter) ||
                 player.Is(RoleEnum.VampireHunter) || player.Is(RoleEnum.Knight) || player.Is(ModifierEnum.Vengeful) ||
                 player.Is(RoleEnum.Imitator)) return true;
@@ -2506,11 +2506,7 @@ namespace TownOfUsEdited
                 var doctor = Role.GetRole<Doctor>(PlayerControl.LocalPlayer);
                 doctor.Cooldown = CustomGameOptions.DocReviveCooldown;
             }
-            if (PlayerControl.LocalPlayer.Is(RoleEnum.Politician))
-            {
-                var politician = Role.GetRole<Politician>(PlayerControl.LocalPlayer);
-                politician.Cooldown = CustomGameOptions.CampaignCd;
-            }
+            
             if (PlayerControl.LocalPlayer.Is(RoleEnum.Jailor))
             {
                 var jailor = Role.GetRole<Jailor>(PlayerControl.LocalPlayer);

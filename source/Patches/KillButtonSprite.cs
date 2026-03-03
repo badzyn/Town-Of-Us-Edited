@@ -126,11 +126,7 @@ namespace TownOfUsEdited
                 __instance.KillButton.graphic.sprite = TownOfUsEdited.JailSprite;
                 flag = true;
             }
-            else if (PlayerControl.LocalPlayer.Is(RoleEnum.Politician))
-            {
-                __instance.KillButton.graphic.sprite = TownOfUsEdited.CampaignSprite;
-                flag = true;
-            }
+            
             else if (PlayerControl.LocalPlayer.Is(RoleEnum.Warden))
             {
                 __instance.KillButton.graphic.sprite = TownOfUsEdited.FortifySprite;

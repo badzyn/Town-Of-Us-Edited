@@ -193,5 +193,8 @@ namespace TownOfUsEdited
 
         SubmergedFixOxygen,
         Test,
+
+        SetExtraVotes,
+        AddPresidentVoteBank
     }
 }

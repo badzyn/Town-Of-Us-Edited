@@ -49,7 +49,7 @@ namespace TownOfUsEdited.Roles
             else
             {
                 HudManager.Instance.ShowPopUp("Normally, the game would've ended and the Executioner would've won. In Freeplay, we just assign a new target to the Executioner.");
-                var exeTargets = PlayerControl.AllPlayerControls.ToArray().Where(x => x.Is(Faction.Crewmates) && !x.Is(ModifierEnum.Lover) && !x.Is(RoleEnum.Politician) && !x.Is(RoleEnum.Prosecutor) && !x.Is(RoleEnum.Swapper) && !x.Is(RoleEnum.Vigilante) && x != SetTraitor.WillBeTraitor).ToList();
+                var exeTargets = PlayerControl.AllPlayerControls.ToArray().Where(x => x.Is(Faction.Crewmates) && !x.Is(ModifierEnum.Lover) && !x.Is(RoleEnum.Jailor) && !x.Is(RoleEnum.President) && !x.Is(RoleEnum.Prosecutor) && !x.Is(RoleEnum.Swapper) && !x.Is(RoleEnum.Vigilante) && x != SetTraitor.WillBeTraitor).ToList();
                 if (exeTargets.Count > 0)
                 {
                     target = exeTargets[Random.RandomRangeInt(0, exeTargets.Count)];

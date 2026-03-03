@@ -107,7 +107,7 @@ namespace TownOfUsEdited.NeutralRoles.AmnesiacMod
                 case RoleEnum.Fighter:
                 case RoleEnum.Knight:
                 case RoleEnum.Engineer:
-                case RoleEnum.Mayor:
+                case RoleEnum.President:
                 case RoleEnum.Swapper:
                 case RoleEnum.Investigator:
                 case RoleEnum.Medic:
@@ -144,7 +144,6 @@ namespace TownOfUsEdited.NeutralRoles.AmnesiacMod
                 case RoleEnum.Aurial:
                 case RoleEnum.Paranoïac:
                 case RoleEnum.Warden:
-                case RoleEnum.Politician:
                 case RoleEnum.Plumber:
                 case RoleEnum.Cleric:
                 case RoleEnum.Watcher:
@@ -351,19 +350,7 @@ namespace TownOfUsEdited.NeutralRoles.AmnesiacMod
                 plumberRole.Cooldown = CustomGameOptions.FlushCd;
             }
 
-            else if (role == RoleEnum.Mayor)
-            {
-                var mayorRole = Role.GetRole<Mayor>(amnesiac);
-                mayorRole.Revealed = false;
-                HudManager.Instance.KillButton.gameObject.SetActive(false);
-            }
-
-            else if (role == RoleEnum.Politician)
-            {
-                var pnRole = Role.GetRole<Politician>(amnesiac);
-                pnRole.CampaignedPlayers.RemoveRange(0, pnRole.CampaignedPlayers.Count);
-                pnRole.Cooldown = CustomGameOptions.CampaignCd;
-            }
+           
 
             else if (role == RoleEnum.SoulCollector)
             {
@@ -384,6 +371,13 @@ namespace TownOfUsEdited.NeutralRoles.AmnesiacMod
             {
                 var prosRole = Role.GetRole<Prosecutor>(amnesiac);
                 prosRole.Prosecuted = false;
+                HudManager.Instance.KillButton.gameObject.SetActive(false);
+            }
+
+            else if (role == RoleEnum.President)
+            {
+                var presidentRole = Role.GetRole<President>(amnesiac);
+                presidentRole.VoteBank = CustomGameOptions.PresidentVoteBank;
                 HudManager.Instance.KillButton.gameObject.SetActive(false);
             }
 

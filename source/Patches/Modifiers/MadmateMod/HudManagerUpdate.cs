@@ -13,7 +13,7 @@ namespace TownOfUsEdited.Patches.Modifiers.MadmateMod
             if (PlayerControl.LocalPlayer.Data == null) return;
             if (!PlayerControl.LocalPlayer.Is(Faction.Madmates)) return;
             var flag = PlayerControl.LocalPlayer.Is(RoleEnum.Crewmate) || PlayerControl.LocalPlayer.Is(RoleEnum.Imitator) || PlayerControl.LocalPlayer.Is(RoleEnum.Investigator) ||
-            PlayerControl.LocalPlayer.Is(RoleEnum.Mayor) || PlayerControl.LocalPlayer.Is(RoleEnum.Mystic) ||
+            PlayerControl.LocalPlayer.Is(RoleEnum.President) || PlayerControl.LocalPlayer.Is(RoleEnum.Mystic) ||
             PlayerControl.LocalPlayer.Is(RoleEnum.Prosecutor) || PlayerControl.LocalPlayer.Is(RoleEnum.Snitch) ||
             PlayerControl.LocalPlayer.Is(RoleEnum.Spy) || PlayerControl.LocalPlayer.Is(RoleEnum.Swapper) ||
             PlayerControl.LocalPlayer.Is(RoleEnum.Vigilante) || PlayerControl.LocalPlayer.Is(RoleEnum.Bodyguard);

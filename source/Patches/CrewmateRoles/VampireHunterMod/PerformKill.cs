@@ -140,13 +140,6 @@ namespace TownOfUsEdited.CrewmateRoles.VampireHunterMod
                 medicRole.ShieldedPlayer = null;
             }
 
-            else if (roleEnum == RoleEnum.Mayor)
-            {
-                var mayorRole = Role.GetRole<Mayor>(oldVamp);
-                mayorRole.Revealed = false;
-                HudManager.Instance.KillButton.gameObject.SetActive(false);
-            }
-
             else if (roleEnum == RoleEnum.Prosecutor)
             {
                 var prosRole = Role.GetRole<Prosecutor>(oldVamp);
@@ -154,12 +147,7 @@ namespace TownOfUsEdited.CrewmateRoles.VampireHunterMod
                 HudManager.Instance.KillButton.gameObject.SetActive(false);
             }
 
-            else if (roleEnum == RoleEnum.Politician)
-            {
-                var pnRole = Role.GetRole<Politician>(oldVamp);
-                pnRole.CampaignedPlayers.RemoveRange(0, pnRole.CampaignedPlayers.Count);
-                pnRole.Cooldown = CustomGameOptions.CampaignCd;
-            }
+            
 
             else if (roleEnum == RoleEnum.SoulCollector)
             {

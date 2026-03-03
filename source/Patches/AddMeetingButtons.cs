@@ -5,8 +5,6 @@ using TownOfUsEdited.CrewmateRoles.ClericMod;
 using TownOfUsEdited.CrewmateRoles.DeputyMod;
 using TownOfUsEdited.CrewmateRoles.ImitatorMod;
 using TownOfUsEdited.CrewmateRoles.InvestigatorMod;
-using TownOfUsEdited.CrewmateRoles.MayorMod;
-using TownOfUsEdited.CrewmateRoles.PoliticianMod;
 using TownOfUsEdited.CrewmateRoles.ProsecutorMod;
 using TownOfUsEdited.CrewmateRoles.TrapperMod;
 using TownOfUsEdited.CrewmateRoles.VigilanteMod;
@@ -152,11 +150,7 @@ namespace TownOfUsEdited.Patches
                             clericRole.CleanseButton.gameObject.SetActive(false);
                         }
 
-                        if (PlayerControl.LocalPlayer.Is(RoleEnum.Politician))
-                        {
-                            var politicianRole = Role.GetRole<Politician>(PlayerControl.LocalPlayer);
-                            politicianRole.ClosestPlayer = null;
-                        }
+                        
 
                         if (PlayerControl.LocalPlayer.Is(RoleEnum.Jailor))
                         {
@@ -247,8 +241,6 @@ namespace TownOfUsEdited.Patches
             {
                 AddButtonDeputy.AddDepButtons(__instance);
                 AddButtonImitator.AddImitatorButtons(__instance);
-                AddRevealButton.AddMayorButtons(__instance);
-                AddRevealButtonPolitician.AddPoliticianButtons(__instance);
                 AddProsecute.AddProsecuteButton(__instance);
                 AddButton.AddSwapperButtons(__instance);
                 AddButtonRitualist.AddRitualistButtons(__instance);

@@ -357,7 +357,8 @@ namespace TownOfUsEdited.Patches
                 {
                     if (sourcePlayer.PlayerId == PlayerControl.LocalPlayer.PlayerId)
                     {
-                        chatText = UpdateRoleInfo.GetRoleInfos(chatText[3..]);
+                        chatText = UpdateRoleInfo.GetRoleInfos(
+                            char.ToUpper(chatText[3..][0]) + chatText[3..].Substring(1).ToLower());
                         system = true;
                     }
                     return sourcePlayer.PlayerId == PlayerControl.LocalPlayer.PlayerId;
@@ -367,7 +368,7 @@ namespace TownOfUsEdited.Patches
                 {
                     if (sourcePlayer.PlayerId == PlayerControl.LocalPlayer.PlayerId)
                     {
-                        chatText = UpdateRoleInfo.GetModifiersInfos(chatText[3..]);
+                        chatText = UpdateRoleInfo.GetModifiersInfos(char.ToUpper(chatText[3..][0]) + chatText[3..].Substring(1).ToLower());
                         system = true;
                     }
                     return sourcePlayer.PlayerId == PlayerControl.LocalPlayer.PlayerId;
@@ -694,7 +695,6 @@ namespace TownOfUsEdited.Patches
                 if (CustomGameOptions.VigilanteOn > 0) ColorMapping.Add("Vigilante", Colors.Vigilante);
                 ColorMapping.Add("\n<b>Crewmate <color=#704FA8FF>Power</color></b>\n", Palette.CrewmateBlue);
                 if (CustomGameOptions.JailorOn > 0) ColorMapping.Add("Jailor", Colors.Jailor);
-                if (CustomGameOptions.PoliticianOn > 0) ColorMapping.Add("Politician", Colors.Politician);
                 if (CustomGameOptions.ProsecutorOn > 0) ColorMapping.Add("Prosecutor", Colors.Prosecutor);
                 if (CustomGameOptions.SwapperOn > 0) ColorMapping.Add("Swapper", Colors.Swapper);
                 ColorMapping.Add("\n<b>Crewmate <color=#006600FF>Protective</color></b>\n", Palette.CrewmateBlue);
@@ -714,6 +714,7 @@ namespace TownOfUsEdited.Patches
                 if (CustomGameOptions.PlumberOn > 0) ColorMapping.Add("Plumber", Colors.Plumber);
                 if (CustomGameOptions.TimeLordOn > 0) ColorMapping.Add("Time Lord", Colors.TimeLord);
                 if (CustomGameOptions.TransporterOn > 0) ColorMapping.Add("Transporter", Colors.Transporter);
+                if (CustomGameOptions.PresidentOn > 0) ColorMapping.Add("President", Colors.Mayor);
                 ColorMapping.Add("\n<b>Neutral <color=#B3FFFFFF>Benign</color></b>\n", Palette.DisabledGrey);
                 if (CustomGameOptions.AmnesiacOn > 0) ColorMapping.Add("Amnesiac", Colors.Amnesiac);
                 if (CustomGameOptions.GuardianAngelOn > 0) ColorMapping.Add("Guardian Angel", Colors.GuardianAngel);

@@ -142,10 +142,9 @@ namespace TownOfUsEdited.CrewmateRoles.ImitatorMod
             else if (imitatorRole == RoleEnum.Jailor) new Jailor(imi);
             else if (imitatorRole == RoleEnum.Vigilante) new Vigilante(imi);
             else if (imitatorRole == RoleEnum.Warden) new Warden(imi);
-            else if (imitatorRole == RoleEnum.Politician) new Politician(imi);
+            else if (imitatorRole == RoleEnum.President) new President(imi);
             else if (imitatorRole == RoleEnum.Prosecutor) new Prosecutor(imi);
             else if (imitatorRole == RoleEnum.Swapper) new Swapper(imi);
-            else if (imitatorRole == RoleEnum.Mayor) new Mayor(imi);
             if (imitatorRole == RoleEnum.Medic)
             {
                 var medic = new Medic(imi);

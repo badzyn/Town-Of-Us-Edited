@@ -33,7 +33,7 @@ namespace TownOfUsEdited
     public class TownOfUsEdited : BasePlugin
     {
         public const string Id = "com.lekillerdesgames.townofusedited";
-        public const string VersionString = "0.0.2";
+        public const string VersionString = "0.0.3";
         public static Version Version = Version.Parse(VersionString);
         public const string VersionTag = "<color=#00F0FF></color>";
 

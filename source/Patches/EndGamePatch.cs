@@ -1,5 +1,6 @@
 using AmongUs.GameOptions;
 using HarmonyLib;
+using LibCpp2IL.Elf;
 using Reactor.Utilities;
 using Reactor.Utilities.Extensions;
 using System.Collections.Generic;
@@ -75,7 +76,7 @@ namespace TownOfUsEdited.Patches
                     else if (role.Value == RoleEnum.Shifter) { playerRole += "<color=#" + Patches.Colors.Shifter.ToHtmlStringRGBA() + ">Shifter</color> > "; }
                     else if (role.Value == RoleEnum.Engineer) { playerRole += "<color=#" + Patches.Colors.Engineer.ToHtmlStringRGBA() + ">Engineer</color> > "; }
                     else if (role.Value == RoleEnum.Investigator) { playerRole += "<color=#" + Patches.Colors.Investigator.ToHtmlStringRGBA() + ">Investigator</color> > "; }
-                    else if (role.Value == RoleEnum.Mayor) { playerRole += "<color=#" + Patches.Colors.Mayor.ToHtmlStringRGBA() + ">Mayor</color> > "; }
+                    else if (role.Value == RoleEnum.President) { playerRole += "<color=#" + Patches.Colors.Mayor.ToHtmlStringRGBA() + ">President</color> > "; }
                     else if (role.Value == RoleEnum.Medic) { playerRole += "<color=#" + Patches.Colors.Medic.ToHtmlStringRGBA() + ">Medic</color> > "; }
                     else if (role.Value == RoleEnum.Paranoïac) { playerRole += "<color=#" + Patches.Colors.Paranoïac.ToHtmlStringRGBA() + ">Paranoïac</color> > "; }
                     else if (role.Value == RoleEnum.Sheriff) { playerRole += "<color=#" + Patches.Colors.Sheriff.ToHtmlStringRGBA() + ">Sheriff</color> > "; }
@@ -155,7 +156,6 @@ namespace TownOfUsEdited.Patches
                     else if (role.Value == RoleEnum.Spiritualist) { playerRole += "<color=#" + Patches.Colors.Coven.ToHtmlStringRGBA() + ">Spiritualist</color> > "; }
                     else if (role.Value == RoleEnum.VoodooMaster) { playerRole += "<color=#" + Patches.Colors.Coven.ToHtmlStringRGBA() + ">Voodoo Master</color> > "; }
                     else if (role.Value == RoleEnum.PotionMaster) { playerRole += "<color=#" + Patches.Colors.Coven.ToHtmlStringRGBA() + ">Potion Master</color> > "; }
-                    else if (role.Value == RoleEnum.Politician) { playerRole += "<color=#" + Patches.Colors.Politician.ToHtmlStringRGBA() + ">Politician</color> > "; }
                     else if (role.Value == RoleEnum.Warden) { playerRole += "<color=#" + Patches.Colors.Warden.ToHtmlStringRGBA() + ">Warden</color> > "; }
                     else if (role.Value == RoleEnum.Hypnotist) { playerRole += "<color=#" + Patches.Colors.Impostor.ToHtmlStringRGBA() + ">Hypnotist</color> > "; }
                     else if (role.Value == RoleEnum.SoulCollector) { playerRole += "<color=#" + Patches.Colors.SoulCollector.ToHtmlStringRGBA() + ">Soul Collector</color> > "; }
@@ -166,6 +166,8 @@ namespace TownOfUsEdited.Patches
                     else if (role.Value == RoleEnum.Cleric) { playerRole += "<color=#" + Patches.Colors.Cleric.ToHtmlStringRGBA() + ">Cleric</color> > "; }
                     else if (role.Value == RoleEnum.Noclip) { playerRole += "<color=#" + Patches.Colors.Impostor.ToHtmlStringRGBA() + ">Noclip</color> > "; }
                     else if (role.Value == RoleEnum.Watcher) { playerRole += "<color=#" + Patches.Colors.Lookout.ToHtmlStringRGBA() + ">Watcher</color> > "; }
+                    else if (role.Value == RoleEnum.Kamikaze) { playerRole += "<color=#" + Patches.Colors.Impostor.ToHtmlStringRGBA() + ">Kamikaze</color> > "; }
+                    
                 }
                 if (!playerRole.IsNullOrWhiteSpace()) playerRole = playerRole.Remove(playerRole.Length - 3);
 

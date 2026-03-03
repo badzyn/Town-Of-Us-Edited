@@ -19,7 +19,7 @@ using TownOfUsEdited.CrewmateRoles.GuardianMod;
 using TownOfUsEdited.CrewmateRoles.HaunterMod;
 using TownOfUsEdited.CrewmateRoles.HelperMod;
 using TownOfUsEdited.CrewmateRoles.ImitatorMod;
-using TownOfUsEdited.CrewmateRoles.MayorMod;
+using TownOfUsEdited.CrewmateRoles.PresidentMod;
 using TownOfUsEdited.CrewmateRoles.MedicMod;
 using TownOfUsEdited.CrewmateRoles.SwapperMod;
 using TownOfUsEdited.CrewmateRoles.TimeLordMod;
@@ -1128,7 +1128,7 @@ namespace TownOfUsEdited
             }
 
             // Set the Traitor, if there is one enabled.
-            var toChooseFromCrew = PlayerControl.AllPlayerControls.ToArray().Where(x => x.Is(Faction.Crewmates) && !x.Is(RoleEnum.Politician) && !x.Is(ModifierEnum.Lover)).ToList();
+            var toChooseFromCrew = PlayerControl.AllPlayerControls.ToArray().Where(x => x.Is(Faction.Crewmates) && !x.Is(RoleEnum.President) && !x.Is(ModifierEnum.Lover)).ToList();
             if (TraitorOn && toChooseFromCrew.Count != 0)
             {
                 var rand = Random.RandomRangeInt(0, toChooseFromCrew.Count);
@@ -1158,7 +1158,7 @@ namespace TownOfUsEdited
                 Utils.Rpc(CustomRPC.SetPhantom, byte.MaxValue);
             }
 
-            var exeTargets = PlayerControl.AllPlayerControls.ToArray().Where(x => x.Is(Faction.Crewmates) && !x.Is(ModifierEnum.Lover) && !x.Is(RoleEnum.Politician) && !x.Is(RoleEnum.Prosecutor) && !x.Is(RoleEnum.Swapper) && !x.Is(RoleEnum.Vigilante) && !x.Is(RoleEnum.Jailor) && x != SetTraitor.WillBeTraitor).ToList();
+            var exeTargets = PlayerControl.AllPlayerControls.ToArray().Where(x => x.Is(Faction.Crewmates) && !x.Is(ModifierEnum.Lover) && !x.Is(RoleEnum.President) && !x.Is(RoleEnum.Prosecutor) && !x.Is(RoleEnum.Swapper) && !x.Is(RoleEnum.Vigilante) && !x.Is(RoleEnum.Jailor) && x != SetTraitor.WillBeTraitor).ToList();
             foreach (var role in Role.GetRoles(RoleEnum.Executioner))
             {
                 var exe = (Executioner)role;
@@ -1414,23 +1414,7 @@ namespace TownOfUsEdited
                                 lights.ActualSwitches = lights.ExpectedSwitches;
                                 break;
 
-                            case CustomRPC.Reveal:
-                                var mayor = Utils.PlayerById(reader.ReadByte());
-                                var mayorRole = Role.GetRole<Mayor>(mayor);
-                                mayorRole.Revealed = true;
-                                AddRevealButton.RemoveAssassin(mayorRole);
-                                break;
-
-                            case CustomRPC.Elect:
-                                bool isMadmate = false;
-                                var politician = Utils.PlayerById(reader.ReadByte());
-                                if (politician.Is(Faction.Madmates)) isMadmate = true;
-                                Role.RoleDictionary.Remove(politician.PlayerId);
-                                var mayorRole2 = new Mayor(politician);
-                                mayorRole2.Revealed = true;
-                                AddRevealButton.RemoveAssassin(mayorRole2);
-                                if (isMadmate) Utils.TurnMadmate(politician, false);
-                                break;
+                            
 
                             case CustomRPC.Prosecute:
                                 var prosecutor = Utils.PlayerById(reader.ReadByte());
@@ -2014,6 +1998,23 @@ namespace TownOfUsEdited
                                         break;
                                 }
                                 break;
+
+                            case CustomRPC.SetExtraVotes:
+                                {
+                                    var president = Utils.PlayerById(reader.ReadByte());
+                                    var presidentRole = Role.GetRole<President>(president);
+
+                                    presidentRole.ExtraVotes = reader.ReadBytesAndSize().ToList();
+
+                                    break;
+                                }
+                            case CustomRPC.AddPresidentVoteBank:
+                                Role.GetRole<President>(Utils.PlayerById(reader.ReadByte())).VoteBank += reader.ReadInt32();
+                                break;
+
+
+
+
                             case CustomRPC.Alert:
                                 var veteran = Utils.PlayerById(reader.ReadByte());
                                 var veteranRole = Role.GetRole<Veteran>(veteran);
@@ -3029,8 +3030,8 @@ namespace TownOfUsEdited
                     if (CustomGameOptions.CrewmateOn > 0)
                         CrewmateRoles.Add((typeof(Crewmate), CustomGameOptions.CrewmateOn, true));
 
-                    if (CustomGameOptions.PoliticianOn > 0)
-                        CrewmateRoles.Add((typeof(Politician), CustomGameOptions.PoliticianOn, true));
+                    if (CustomGameOptions.PresidentOn > 0)
+                        CrewmateRoles.Add((typeof(President), CustomGameOptions.PresidentOn, true));
 
                     if (CustomGameOptions.WardenOn > 0)
                         CrewmateRoles.Add((typeof(Warden), CustomGameOptions.WardenOn, true));
@@ -3425,8 +3426,8 @@ namespace TownOfUsEdited
                         if (CustomGameOptions.CrewmateOn > 0)
                             CrewmateSupportRoles.Add((typeof(Crewmate), CustomGameOptions.CrewmateOn, false || CustomGameOptions.UniqueRoles));
 
-                        if (CustomGameOptions.PoliticianOn > 0)
-                            CrewmatePowerRoles.Add((typeof(Politician), CustomGameOptions.PoliticianOn, true));
+                        if (CustomGameOptions.PresidentOn > 0)
+                            CrewmateSupportRoles.Add((typeof(President), CustomGameOptions.PresidentOn, true));
 
                         if (CustomGameOptions.WardenOn > 0)
                             CrewmateSupportRoles.Add((typeof(Warden), CustomGameOptions.WardenOn, false || CustomGameOptions.UniqueRoles));
