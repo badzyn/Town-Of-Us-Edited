@@ -83,6 +83,7 @@
 # Releases
 | Among Us - Version| Mod Version | Steam Link | Epic Games link |
 |----------|-------------|-----------------|-----------------|
+|  17.0.0 - 17.2.1 | v0.0.3 | [Download for Steam](https://github.com/badzyn/Town-Of-Us-Edited/releases/download/v0.0.3/ToUEu-Steam.v0.0.3.zip) | [Download for Epic Games](https://github.com/badzyn/Town-Of-Us-Edited/releases/download/v0.0.3/ToUEu-Epic.v0.0.3.zip) |
 |  17.0.0 - 17.2.1 | v0.0.2 | [Download for Steam](https://github.com/badzyn/Town-Of-Us-Edited/releases/download/v0.0.2/ToUEu-Steam.v0.0.2.zip) | [Download for Epic Games](https://github.com/badzyn/Town-Of-Us-Edited/releases/download/v0.0.2/ToUEu-Epic.v0.0.2.zip) |
 |  17.0.0 - 17.2.1 | v0.0.1 | [Download for Steam](https://github.com/badzyn/Town-Of-Us-Edited/releases/download/v0.0.1/ToUEu-Steam.v0.0.1.zip) | [Download for Epic Games](https://github.com/badzyn/Town-Of-Us-Edited/releases/download/v0.0.1/ToUEu-Epic.v0.0.1.zip) |
 
